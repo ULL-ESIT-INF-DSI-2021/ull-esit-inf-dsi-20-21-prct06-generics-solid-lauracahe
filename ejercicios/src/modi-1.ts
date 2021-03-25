@@ -11,35 +11,63 @@ interface Edificios {
   print(): void;
 }
 
-class Polideportivo implements Polideportivos {
+export class Polideportivo implements Polideportivos {
+  /**
+   * 
+   * @param superficie Superficie del recinto
+   * @param deportes Deportes permitidos en el recinto
+   */
   constructor(private readonly superficie: number, private deportes: Deportes) {
   }
 
+  /**
+   * @return Devuelve la superficie del recinto.
+   */
   getSuperficie() {
     return this.superficie;
   }
 
+  /**
+   * @return Devuelve el deporte del recinto.
+   */
   getDeportes() {
     return this.deportes;
   }
 
+  /**
+   * @brief Imprime por pantalla los datos del polideportivo.
+   */
   print(){
     console.log(`Polideportivo de ${this.getSuperficie} metros y se practica ${this.getDeportes()}.`);
   }
 }
 
-class Gym {
+class Gym implements Edificios {
+  /**
+   * 
+   * @param aforo Aforo del gimnacio
+   * @param superficie Superficie del gimnacio
+   */
   constructor(private readonly aforo: number, private superficie: number) {
   }
 
+  /**
+   * @return Devuelve la superficie del gimnacio
+   */
   getSuperficie() {
     return this.superficie;
   }
 
+  /**
+   * @return Devuelve el aforo del gimnacio
+   */
   getAforo() {
     return this.aforo;
   }
 
+  /**
+   * @brief Imprime los datos del gimnacio
+   */
   print(){
     console.log(`Gymnacio con aforo de ${this.getAforo()} personas y ${this.getSuperficie()} metros.`);
   }
@@ -47,9 +75,16 @@ class Gym {
 
 
 abstract class Edificio implements Edificios {
+  /**
+   * 
+   * @param superficie Superficie del edificio
+   */
   constructor(private superficie: number) {
   }
 
+  /**
+   * @return Devuelve la superficie del edificio
+   */
   getSuperficie() {
     return this.superficie;
   }
@@ -58,10 +93,18 @@ abstract class Edificio implements Edificios {
 }
 
 class Viviendas extends Edificio {
+  /**
+   * 
+   * @param superficie Superficie de la vivienda
+   * @param viviendas Cantidad de viviendas
+   */
   constructor(superficie: number, private readonly viviendas: number) {
   super(superficie);
   }
 
+  /**
+   * @return Número de viviendas
+   */
   getViviendas(){
     return this.viviendas;
   }
@@ -72,14 +115,26 @@ class Viviendas extends Edificio {
 }
 
 class Enseñanza extends Edificio {
+  /**
+   * 
+   * @param superficie Superficie de la enseñanza
+   * @param aulas Aulas de la enseñanza
+   * @param alumnos Alumnos por cada aula
+   */
   constructor(superficie: number, private readonly aulas: number, private readonly alumnos: number) {
   super(superficie);
   }
 
+  /**
+   * @return Número de aulas
+   */
   getAulas(){
     return this.aulas;
   }
 
+  /**
+   * @return Número de alumnos por aulas.
+   */
   getAlumnos(){
     return this.alumnos;
   }
