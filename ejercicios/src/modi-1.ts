@@ -1,6 +1,17 @@
 type Deportes = 'baloncesto' | 'futbol' | 'balonmano';
 
-class Polideportivo {
+interface Polideportivos{
+  getSuperficie(): number;
+  getDeportes():string;
+  print(): void;
+}
+
+interface Edificios {
+  getSuperficie(): number;
+  print(): void;
+}
+
+class Polideportivo implements Polideportivos {
   constructor(private readonly superficie: number, private deportes: Deportes) {
   }
 
@@ -10,10 +21,6 @@ class Polideportivo {
 
   getDeportes() {
     return this.deportes;
-  }
-
-  setDeportes(deportes: Deportes) {
-    this.deportes= deportes;
   }
 
   print(){
@@ -39,7 +46,7 @@ class Gym {
 }
 
 
-abstract class Edificio {
+abstract class Edificio implements Edificios {
   constructor(private superficie: number) {
   }
 

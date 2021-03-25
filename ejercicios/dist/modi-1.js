@@ -9,9 +9,6 @@ class Polideportivo {
     getDeportes() {
         return this.deportes;
     }
-    setDeportes(deportes) {
-        this.deportes = deportes;
-    }
     print() {
         console.log(`Polideportivo de ${this.getSuperficie} metros y se practica ${this.getDeportes()}.`);
     }

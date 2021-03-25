@@ -1,11 +1,19 @@
 declare type Deportes = 'baloncesto' | 'futbol' | 'balonmano';
-declare class Polideportivo {
+interface Polideportivos {
+    getSuperficie(): number;
+    getDeportes(): string;
+    print(): void;
+}
+interface Edificios {
+    getSuperficie(): number;
+    print(): void;
+}
+declare class Polideportivo implements Polideportivos {
     private readonly superficie;
     private deportes;
     constructor(superficie: number, deportes: Deportes);
     getSuperficie(): number;
     getDeportes(): Deportes;
-    setDeportes(deportes: Deportes): void;
     print(): void;
 }
 declare class Gym {
@@ -16,7 +24,7 @@ declare class Gym {
     getAforo(): number;
     print(): void;
 }
-declare abstract class Edificio {
+declare abstract class Edificio implements Edificios {
     private superficie;
     constructor(superficie: number);
     getSuperficie(): number;
