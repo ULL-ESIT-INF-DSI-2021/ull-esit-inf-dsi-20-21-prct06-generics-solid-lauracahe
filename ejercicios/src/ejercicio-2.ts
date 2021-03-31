@@ -2,9 +2,9 @@
  * @brief Interface that allows conversions between systems for each magnitude
  */
 export interface isConvertible<T> {
-  initial: T;
-  initialUnit: string;
-  unitChange(finalUnit: string): T;
+  initial: T; //Cantidad de origen
+  initialUnit: string; //Unidad inicial
+  unitChange(finalUnit: string): T; 
 }
 
 const measurementsSpeed: [string[], number[]] = [['mps', 'mph', 'kph'], [0.28, 0.62, 1]];
@@ -12,9 +12,18 @@ const measurementsSpeed: [string[], number[]] = [['mps', 'mph', 'kph'], [0.28, 0
 /**
  * @brief Speed class that convert differents unit systems. 
  */
-class Speed implements isConvertible<number> {
+export class Speed implements isConvertible<number> {
+  /**
+   * 
+   * @param initial initial amount
+   * @param initialUnit initial unit
+   */
   constructor(public readonly initial: number, public readonly initialUnit: string) {}
 
+  /**
+   * 
+   * @param finalUnit final unit
+   */
   unitChange(finalUnit: string): number {
     return this.initial * measurementsSpeed[1][measurementsSpeed[0].indexOf(finalUnit)] / measurementsSpeed[1][measurementsSpeed[0].indexOf(this.initialUnit)];
   }
@@ -25,7 +34,7 @@ const measurementsMass: [string[], number[]] = [['st', 'g', 'kg'], [0.16, 1000, 
 /**
  * @brief Mass class that convert differents unit systems. 
  */
-class Mass implements isConvertible<number> {
+export class Mass implements isConvertible<number> {
   constructor(public initial: number, public initialUnit: string) {}
 
   unitChange(finalUnit: string): number {
@@ -38,7 +47,7 @@ const measurementsLenght: [string[], number[]] = [['km', 'cm', 'm'], [0.001, 100
 /**
  * @brief Lenght class that convert differents unit systems. 
  */
-class Length implements isConvertible<number> {
+export class Length implements isConvertible<number> {
   constructor(public initial: number, public initialUnit: string) {}
 
   unitChange(finalUnit: string): number {
@@ -64,7 +73,7 @@ const measurementsTemperature: [string[], number[]] = [['k', 'f', 'c'], [274.15,
 /**
  * @brief Temperature class that convert differents unit systems. 
  */
-class Temperature implements isConvertible<number> {
+export class Temperature implements isConvertible<number> {
   constructor(public initial: number, public initialUnit: string) {}
 
   unitChange(finalUnit: string): number {
@@ -81,20 +90,37 @@ export class Volume implements isConvertible<number> {
   constructor(public initial: number, public initialUnit: string) {}
 
   unitChange(finalUnit: string): number {
-    return this.initial * measurementsVolume[1][measurementsVolume[0].indexOf(finalUnit)] / measurementsVolume[1][measurementsVolume[0].indexOf(this.initialUnit)];
+    return Number(this.initial * measurementsVolume[1][measurementsVolume[0].indexOf(finalUnit)] / measurementsVolume[1][measurementsVolume[0].indexOf(this.initialUnit)]);
   }
 }
 
-const measurementsStrength: [string[], number[]] = [['kp', 'ml', 'm3'], [9,80665, 1000, 0.001]];
+// const measurementsStrength: [string[], number[]] = [['kp'], [9.80665]];
 
-/**
- * @brief Strength class that convert differents unit systems. 
- */
-export class Strength implements isConvertible<number> {
-  constructor(public initial: number, public initialUnit: string) {}
+// /**
+//  * @brief Strength class that convert differents unit systems. 
+//  */
+// export class Strength implements isConvertible<number> {
+//   constructor(public initial: number, public initialUnit: string) {}
 
-  unitChange(finalUnit: string): number {
-    return this.initial * measurementsStrength[1][measurementsStrength[0].indexOf(finalUnit)] / measurementsStrength[1][measurementsStrength[0].indexOf(this.initialUnit)];
-  }
-}
+//   unitChange(finalUnit: string): number {
+//     return this.initial * measurementsStrength[1][measurementsStrength[0].indexOf(finalUnit)] / measurementsStrength[1][measurementsStrength[0].indexOf(this.initialUnit)];
+//   }
+// }
 
+let mass = new Mass(6.8, 'g');
+console.log(mass.unitChange('kg'));
+
+let volume = new Volume(6.8, 'm3');
+console.log(volume.unitChange('l'));
+
+let speed = new Speed(6.8, 'mps');
+console.log(speed.unitChange('kph'));
+
+let length = new Length(6.8, 'cm');
+console.log(length.unitChange('km'));
+
+let time = new Time(6.8, 'm');
+console.log(time.unitChange('s'));
+
+let temperature = new Temperature(6.8, 'k');
+console.log(temperature.unitChange('c'));
