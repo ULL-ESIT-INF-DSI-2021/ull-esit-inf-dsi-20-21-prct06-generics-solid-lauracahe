@@ -28,6 +28,7 @@
         "indent": "off",
         "array-bracket-spacing": "off",
         "no-unused-vars": "off",
-        "new-cap": "off"
+        "new-cap": "off",
+        "arrow-parens": "off"
     }
 }

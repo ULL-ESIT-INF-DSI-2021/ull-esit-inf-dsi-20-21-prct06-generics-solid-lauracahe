@@ -5,7 +5,7 @@ export type BasicStatistics = {
   hp: number
 };
 
-export abstract class Fighter {
+abstract class Fighter {
   constructor(public readonly name: string, public readonly weight: number, public readonly height: number, 
     public readonly BasicStatistics: BasicStatistics, public readonly universe: string, public readonly catchphrase: string) {}
 }

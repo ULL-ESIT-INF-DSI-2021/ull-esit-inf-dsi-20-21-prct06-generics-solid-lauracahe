@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Combat = exports.Marvel = exports.Pokemon = exports.Fighter = void 0;
+exports.Combat = exports.Marvel = exports.Pokemon = void 0;
 class Fighter {
     constructor(name, weight, height, BasicStatistics, universe, catchphrase) {
         this.name = name;
@@ -11,7 +11,6 @@ class Fighter {
         this.catchphrase = catchphrase;
     }
 }
-exports.Fighter = Fighter;
 class Pokemon extends Fighter {
     constructor(name, weight, height, BasicStatistics, universe, catchphrase) {
         super(name, weight, height, BasicStatistics, universe, catchphrase);

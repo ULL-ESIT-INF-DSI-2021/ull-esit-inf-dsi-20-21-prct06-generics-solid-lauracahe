@@ -4,7 +4,7 @@ export declare type BasicStatistics = {
     speed: number;
     hp: number;
 };
-export declare abstract class Fighter {
+declare abstract class Fighter {
     readonly name: string;
     readonly weight: number;
     readonly height: number;
@@ -31,3 +31,4 @@ export declare class Combat<T extends Fighter, U extends Fighter> {
     damageUtoT(fighter1: U, fighter2: T): number;
     start(): void;
 }
+export {};
