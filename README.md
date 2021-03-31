@@ -111,7 +111,11 @@ En cuanto a los tipos de datos, he creado un tipo de dato denominado __Serie__, 
 
 ## 4. Conclusiones y dificultades
 
-A modo de conclusión, me ha resultado bastante interesante la realización de los ejercicios. Sobretodo, llevar a cabo la documentación de las pruebas mediante la herramienta Instanbul. Me han servido para profundizar sobre las clases e interfaces genéricas y me han quedado mucho más claro algunos conceptos. 
+A modo de conclusión, me ha resultado bastante interesante la realización de los ejercicios. Sobretodo, llevar a cabo la documentación de las pruebas mediante la herramienta Instanbul. Me han servido para profundizar sobre las clases e interfaces genéricas y me han quedado mucho más claro algunos conceptos. He tenido un problema con respecto a la configuración de __COVERALLS-TYPESCRIPT__ cuando he cambiado el repositorio a público. No he podido copiar el __repo_token__ ya que no me ha dejado, directamente salía esta pantalla que muestro a continuación y no como indicó el profesor en el video tutorial. 
+
+![Error al cargar imagen de Coveralls]()
+
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2021/coveralls-typescript/badge.svg?branch=main)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2021/coveralls-typescript?branch=main)
 
 ## 5. Referencias
 
