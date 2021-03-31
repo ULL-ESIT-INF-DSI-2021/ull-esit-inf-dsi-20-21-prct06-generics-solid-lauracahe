@@ -28,6 +28,18 @@ Partiendo del desarrollo realizado para el Ejercicio 1 de la [Práctica 5](https
 - La clase __Pokedex__ deberá actualizarse para incluir también el resto de contendientes. Esto es, deberá ser capaz de almacenar personajes de todos los universos considerados dentro de una misma estructura de datos. Además, deberá ofrecer todas las funcionalidades previamente requeridas para los nuevos contendientes.
 - Por último, desarrolle este ejercicio empleando los principios SOLID Single Responsability y Open-Closed.
 
+![Error al cargar imagen del ejercicio 1](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej1.1P6.png?token=AKMQEBJVQHUCCEDUJHYA7HDANYKDG)
+
+![Error al cargar imagen del ejercicio 1](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej1.2-P6.png?token=AKMQEBJGTET74ST32OIG7IDANYKEE)
+
+![Error al cargar imagen del ejercicio 1](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/EJ1.3-p6.png?token=AKMQEBM3MQFFPXEXIX7ZS3DANYKFC)
+
+![Error al cargar imagen del ejercicio 1](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej1.4-P6.png?token=AKMQEBPSF6LZJGITQFYYCBTANYKF6)
+
+![Error al cargar imagen del ejercicio 1](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej1.5-P6.png?token=AKMQEBKJDQBZ5YWRX6U5WHLANYKGY)
+
+![Error al cargar imagen del test 1](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST1-P6.png?token=AKMQEBMEVQDHTEC7ZCQOZT3ANYKH4)
+
 ### Ejercicio 2 - Conversor de unidades
 
 Considere una herramienta que nos permita realizar las conversiones de unidades o sistemas de medición para distintas magnitudes físicas. Las más comunes pueden ser:
@@ -46,6 +58,14 @@ Diseñe una interfaz genérica __isConvertible__ que permita realizar conversion
 - Se pide ser capaz de poder cambiar, al menos, entre dos unidades o sistemas de medición por cada magnitud.
 - El software deberá seguir los principios SOLID Single Responsability and Open-Closed.
 
+![Error al cargar el ejercicio 2](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/EJ2.1-P6.png?token=AKMQEBOAMNLWAZT5WBIOL43ANYKLE)
+
+![Error al cargar el ejercicio 2](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/EJ2.2-P6.png?token=AKMQEBPJQMOXKMGHBJXTBYLANYKL2)
+
+![Error al cargar el ejercicio 2](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej2.3-p6.png?token=AKMQEBILE2QB5NW7XP3LQ63ANYKMY)
+
+![Error al cargar el test 2](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST2-P6.png?token=AKMQEBNZPCOZBDFBY4LJ27DANYKNU)
+
 ### Ejercicio 3 - DSIflix
 
 Imagine que tiene que diseñar el modelo de datos de una plataforma de vídeo en streaming. A través del catálogo de dicha plataforma se puede acceder a películas, series y documentales:
@@ -54,6 +74,26 @@ Imagine que tiene que diseñar el modelo de datos de una plataforma de vídeo en
 - Defina una clase abstracta genérica __BasicStreamableCollection__ que implemente dicha interfaz genérica. En este punto, podrá particularizar algunas de las propiedades y métodos de la interfaz __Streamable__, aunque otros tendrán que permanecer como abstractos para ser definidos más abajo en la jerarquía de clases. Todo dependerá del diseño que haya llevado a cabo.
 - Tendrá que extender dicha clase abstracta para obtener subclases que modelen cada uno de los tres tipos de colecciones: series, películas y documentales.
 - Trate de aplicar los principios SOLID. Preste especial atención al diseño de la interfaz __Streamable__. Si cree que debe dividirla en interfaces genéricas más pequeñas porque su diseño inicial es muy complejo, hágalo, con el objetivo de cumplir con el cuarto principio SOLID Interface segregation.
+
+![Error al cargar el ejercicio 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.1-p6.png?token=AKMQEBNI6XUHAIXB6HCJGXLANYKSY)
+
+![Error al cargar el ejercicio 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.2-p6.png?token=AKMQEBLFPMG7QCB5WM65J6LANYKTS)
+
+![Error al cargar el ejercicio 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.3-p6.png?token=AKMQEBLJYTLIR2STWIBE4BLANYKUK)
+
+![Error al cargar el ejercicio 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.4-p6.png?token=AKMQEBPICWDVN7Q4XNRAVWLANYKVG)
+
+![Error al cargar el ejercicio 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.5-p6.png?token=AKMQEBPFEMT7XYIIZU5BW2TANYKV6)
+
+![Error al cargar el ejercicio 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.7-p6.png?token=AKMQEBL7TS5TGZ4CQHJM2H3ANYKWY)
+
+![Error al cargar el ejercicio 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.8-p6.png?token=AKMQEBJ6AYEVO4KJKH5736LANYKXS)
+
+![Error al cargar el ejercicio 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.9-p6.png?token=AKMQEBJ7EUC7A4BQRUZTNVLANYKYI)
+
+![Error al cargar el test 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST3-P6.png?token=AKMQEBNKACTMLZSATTOFAV3ANYKZE)
+
+![Error al cargar el test 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST3.2-P6.png?token=AKMQEBLUUTMFNJ7BLEHRVU3ANYKZ4)
 
 ## 4. Conclusiones y dificultades
 
