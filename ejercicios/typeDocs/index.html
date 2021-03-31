@@ -58,9 +58,99 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe" id="ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe" style="color: inherit; text-decoration: none;">
-					<h1>ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe</h1>
+				<a href="#práctica-6-clases-e-interfaces-genéricas-principios-solid" id="práctica-6-clases-e-interfaces-genéricas-principios-solid" style="color: inherit; text-decoration: none;">
+					<h1>Práctica 6: Clases e interfaces genéricas. Principios SOLID</h1>
 				</a>
+				<a href="#1-introducción" id="1-introducción" style="color: inherit; text-decoration: none;">
+					<h2>1. Introducción</h2>
+				</a>
+				<p>A modo de introducción, se detallará un informe de la sexta práctica de la asignatura Desarrollo de Sistemas Informáticos del grado de Ingeniería Informática sobre los ejercicios de programación sobre clases e interfaces genéricas utilizando los Principios SOLID.</p>
+				<a href="#2-estructura-del-proyecto" id="2-estructura-del-proyecto" style="color: inherit; text-decoration: none;">
+					<h2>2. Estructura del proyecto</h2>
+				</a>
+				<p>A la estructura de las prácticas anteriores, se le añade la documentación de <a href="https://istanbul.js.org/">Instanbul</a>, una herramienta que permite obtener informes sobre el código fuente de las pruebas unitarias diseñadas.</p>
+				<p>Para ello, instalé los paquetes como dependencia de desarrollo, <strong>npm install --save-dev nyc coveralls</strong> donde nyc es un editor de comandos de Instanbul y coveralls ayuda a entregar código con confianza al mostrar qué partes del código no están cubiertas por el conjunto de pruebas. </p>
+				<p>Por otro lado, creé un nuevo script en el fichero <strong>package.json</strong> que ejecuta los test mediante nyc de la siguiente manera: <code>&lt;&quot;coverage&quot;: &quot;nyc npm test &amp;&amp; nyc report --reporter=text-lcov | coveralls &amp;&amp; rm -rf .nyc_output&gt;</code>. Acto seguido, inicié sesión en la herramienta Coveralls con la cuenta de GitHub. Como los repositorios son privados, tuve que cambiarlo a público para poder añadir a la entrega la documentación generada en el repositorio correspondiente a esta práctica.</p>
+				<p>Cuando accedemos al repositorio desde Coveralls, nos sale la configuración y debemos copiar la línea que pone <strong>repo_token</strong> en un fichero de configuración denominado <strong>.coveralls.yml</strong> que he creado en la raíz de la estructura del proyecto de esta práctica el cual es totalmente diferente para cada repositorio. Esto lo que permite es que cuando ejecutemos el comando coveralls desde el proyecto, los informes que genera Instanbul del cubrimiento de código del mismo, se asocie al repositorio marcado en la herramienta detallada anteriormente. </p>
+				<a href="#3-ejercicios" id="3-ejercicios" style="color: inherit; text-decoration: none;">
+					<h2>3. Ejercicios</h2>
+				</a>
+				<a href="#ejercicio-1---el-combate-definitivo" id="ejercicio-1---el-combate-definitivo" style="color: inherit; text-decoration: none;">
+					<h3>Ejercicio 1 - El combate definitivo</h3>
+				</a>
+				<p>Partiendo del desarrollo realizado para el Ejercicio 1 de la <a href="https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/">Práctica 5</a>, supongamos que ahora queremos incluir distintos tipos de contendientes a la pelea. Por ejemplo, podríamos incluir personajes del universo Marvel, DC Comics, Star Wars o Dragon Ball entre otros. Puede incluir otros universos y/o personajes que desee. Para extender el desarrollo anterior se pide:</p>
+				<ul>
+					<li>Desarrolle una clase abstracta llamada <strong>Fighter</strong> que permita hacer que un contendiente pueda luchar. Esta clase se considerará la superclase del resto de clases a implementar. Para cada universo, desarrolle la clase que lo represente (Pokemon, Marvel, DC, Star Wars, Dragon Ball, etc).</li>
+					<li>Cada contendiente debe ser descendiente de su clase universo. Además, para cada contendiente se debe poder acceder a la información requerida para la clase <strong>Pokemon</strong> de la práctica anterior (nombre, altura, peso, etc). Puede incluir información extra que considere oportuna según el universo.</li>
+					<li>La clase <strong>Combat</strong> ahora permitará que los combates se disputen entre contendientes de distintos universos. Todas las combinaciones deben ser posibles, incluso contendientes del mismo universo. Asimismo, la simulación de los combates debe ser similar a la realizada en la práctica anterior. Sin embargo, ahora con cada ataque los contendientes deberán mostrar alguna catching phrase representativa de su personaje.</li>
+					<li>Actualice los valores de efectividad de los movimientos de los nuevos contendientes de la forma que considere oportuna. Contendientes de un universo son más fuertes que los de otro, personajes concretos son más fuertes que otros sin importar el universo o una mezcla de ambas. Puede basarse en un criterio similar al empleado en las prácticas anteriores sobre los tipos de Pokemon.</li>
+					<li>La clase <strong>Pokedex</strong> deberá actualizarse para incluir también el resto de contendientes. Esto es, deberá ser capaz de almacenar personajes de todos los universos considerados dentro de una misma estructura de datos. Además, deberá ofrecer todas las funcionalidades previamente requeridas para los nuevos contendientes.</li>
+					<li>Por último, desarrolle este ejercicio empleando los principios SOLID Single Responsability y Open-Closed.</li>
+				</ul>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej1.1P6.png?token=AKMQEBJVQHUCCEDUJHYA7HDANYKDG" alt="Error al cargar imagen del ejercicio 1"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej1.2-P6.png?token=AKMQEBJGTET74ST32OIG7IDANYKEE" alt="Error al cargar imagen del ejercicio 1"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/EJ1.3-p6.png?token=AKMQEBM3MQFFPXEXIX7ZS3DANYKFC" alt="Error al cargar imagen del ejercicio 1"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej1.4-P6.png?token=AKMQEBPSF6LZJGITQFYYCBTANYKF6" alt="Error al cargar imagen del ejercicio 1"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej1.5-P6.png?token=AKMQEBKJDQBZ5YWRX6U5WHLANYKGY" alt="Error al cargar imagen del ejercicio 1"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST1-P6.png?token=AKMQEBMEVQDHTEC7ZCQOZT3ANYKH4" alt="Error al cargar imagen del test 1"></p>
+				<p>Como en la práctica anterior, he creado un tipo de dato denominado <strong>BasicStatistics</strong> que contiene las propiedades de ataque, defensa, velocidad y daño máximo. Acto seguido, creé una clase abstracta <strong>Fighter</strong> que será la superclase de las demás clases que explicaré a continuación. Esta permite hacer que un contendiente pueda luchar cuyo constructor tiene como atributos el nombre, peso, altura, las estadísticas básicas mencionadas anteriormente, el universo al que pertenece y por último, una frase típica del luchador. </p>
+				<p>He realizado las clases Pokemon y Marvel. Estas se extienden de la clase Fighter, por tanto, utiliza los mismos atributos del constructor de la misma mediante super.</p>
+				<p>En cuanto a la clase Combat, utiliza dos parámetros de tipo genéricos que extienden de la clase abstracta <strong>Fighter</strong> en el constructor para realizar el combate final. En esta clase, hay dos funciones diferenciadas que calculan el daño causado. La primera, se realiza desde el luchador uno al dos y la segunda en caso contrario. Cabe destacar que dependiendo del universo, tiene un efectividad diferente. Por último, la función start indica el resultado del combate por pantalla.</p>
+				<a href="#ejercicio-2---conversor-de-unidades" id="ejercicio-2---conversor-de-unidades" style="color: inherit; text-decoration: none;">
+					<h3>Ejercicio 2 - Conversor de unidades</h3>
+				</a>
+				<p>Considere una herramienta que nos permita realizar las conversiones de unidades o sistemas de medición para distintas magnitudes físicas. Las más comunes pueden ser:</p>
+				<ul>
+					<li>Velocidad</li>
+					<li>Masa</li>
+					<li>Longitud</li>
+					<li>Tiempo</li>
+					<li>Temperatura</li>
+					<li>Fuerza</li>
+					<li>Volumen</li>
+				</ul>
+				<p>Diseñe una interfaz genérica <strong>isConvertible</strong> que permita realizar conversiones entre sistemas para cada magnitud considerada. La interfaz debe definirse de modo que, aquellas clases que la implementen, ofrezcan la posibilidad de hacer cambios entre, al menos, dos sistemas o unidades diferentes como, por ejemplo, en el caso de la velocidad, de millas por horas a kilómetros por hora. A continuación, diseñe diferentes clases, una por magnitud física, que implementen dicha interfaz. El desarrollo propuesto deberá incluir las siguientes funcionalidades:</p>
+				<ul>
+					<li>Una clase para cada magnitud considerada.</li>
+					<li>Se pide ser capaz de poder cambiar, al menos, entre dos unidades o sistemas de medición por cada magnitud.</li>
+					<li>El software deberá seguir los principios SOLID Single Responsability and Open-Closed.</li>
+				</ul>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/EJ2.1-P6.png?token=AKMQEBOAMNLWAZT5WBIOL43ANYKLE" alt="Error al cargar el ejercicio 2"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/EJ2.2-P6.png?token=AKMQEBPJQMOXKMGHBJXTBYLANYKL2" alt="Error al cargar el ejercicio 2"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej2.3-p6.png?token=AKMQEBILE2QB5NW7XP3LQ63ANYKMY" alt="Error al cargar el ejercicio 2"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST2-P6.png?token=AKMQEBNZPCOZBDFBY4LJ27DANYKNU" alt="Error al cargar el test 2"></p>
+				<a href="#ejercicio-3---dsiflix" id="ejercicio-3---dsiflix" style="color: inherit; text-decoration: none;">
+					<h3>Ejercicio 3 - DSIflix</h3>
+				</a>
+				<p>Imagine que tiene que diseñar el modelo de datos de una plataforma de vídeo en streaming. A través del catálogo de dicha plataforma se puede acceder a películas, series y documentales:</p>
+				<ul>
+					<li>Defina una interfaz genérica <strong>Streamable</strong> que trate de especificar propiedades y métodos con los que debería contar una colección de emisiones concreta como, por ejemplo, una colección de series. Por ejemplo, deberían definirse métodos de búsqueda en dicha interfaz, que permitan obtener listados en función de diferentes términos de búsqueda: por año o por nombre, entre otros.</li>
+					<li>Defina una clase abstracta genérica <strong>BasicStreamableCollection</strong> que implemente dicha interfaz genérica. En este punto, podrá particularizar algunas de las propiedades y métodos de la interfaz <strong>Streamable</strong>, aunque otros tendrán que permanecer como abstractos para ser definidos más abajo en la jerarquía de clases. Todo dependerá del diseño que haya llevado a cabo.</li>
+					<li>Tendrá que extender dicha clase abstracta para obtener subclases que modelen cada uno de los tres tipos de colecciones: series, películas y documentales.</li>
+					<li>Trate de aplicar los principios SOLID. Preste especial atención al diseño de la interfaz <strong>Streamable</strong>. Si cree que debe dividirla en interfaces genéricas más pequeñas porque su diseño inicial es muy complejo, hágalo, con el objetivo de cumplir con el cuarto principio SOLID Interface segregation.</li>
+				</ul>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.1-p6.png?token=AKMQEBNI6XUHAIXB6HCJGXLANYKSY" alt="Error al cargar el ejercicio 3"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.2-p6.png?token=AKMQEBLFPMG7QCB5WM65J6LANYKTS" alt="Error al cargar el ejercicio 3"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.3-p6.png?token=AKMQEBLJYTLIR2STWIBE4BLANYKUK" alt="Error al cargar el ejercicio 3"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.4-p6.png?token=AKMQEBPICWDVN7Q4XNRAVWLANYKVG" alt="Error al cargar el ejercicio 3"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.5-p6.png?token=AKMQEBPFEMT7XYIIZU5BW2TANYKV6" alt="Error al cargar el ejercicio 3"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.7-p6.png?token=AKMQEBL7TS5TGZ4CQHJM2H3ANYKWY" alt="Error al cargar el ejercicio 3"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.8-p6.png?token=AKMQEBJ6AYEVO4KJKH5736LANYKXS" alt="Error al cargar el ejercicio 3"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej3.9-p6.png?token=AKMQEBJ7EUC7A4BQRUZTNVLANYKYI" alt="Error al cargar el ejercicio 3"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST3-P6.png?token=AKMQEBNKACTMLZSATTOFAV3ANYKZE" alt="Error al cargar el test 3"></p>
+				<p><img src="https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST3.2-P6.png?token=AKMQEBLUUTMFNJ7BLEHRVU3ANYKZ4" alt="Error al cargar el test 3"></p>
+				<a href="#4-conclusiones-y-dificultades" id="4-conclusiones-y-dificultades" style="color: inherit; text-decoration: none;">
+					<h2>4. Conclusiones y dificultades</h2>
+				</a>
+				<p>A modo de conclusión, me han resultado bastante interesante la realización de los ejercicios. Sobretodo, llevar a cabo la documentación de las pruebas mediante la herramienta Instanbul.</p>
+				<a href="#5-referencias" id="5-referencias" style="color: inherit; text-decoration: none;">
+					<h2>5. Referencias</h2>
+				</a>
+				<ol>
+					<li><a href="https://ull-esit-inf-dsi-2021.github.io/prct06-generics-solid/">Práctica 6</a>.</li>
+					<li><a href="https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/">Práctica 5</a>.</li>
+					<li><a href="https://istanbul.js.org/">Instanbul</a>.</li>
+				</ol>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -74,34 +164,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="classes/edificio.html" class="tsd-kind-icon">Edificio</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/ense_anza.html" class="tsd-kind-icon">Enseñanza</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/gym.html" class="tsd-kind-icon">Gym</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/polideportivo.html" class="tsd-kind-icon">Polideportivo</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/recinto.html" class="tsd-kind-icon">Recinto</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/viviendas.html" class="tsd-kind-icon">Viviendas</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/edificios.html" class="tsd-kind-icon">Edificios</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/polideportivos.html" class="tsd-kind-icon">Polideportivos</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#deportes" class="tsd-kind-icon">Deportes</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#recintos" class="tsd-kind-icon">recintos</a>
 					</li>
 				</ul>
 			</nav>
@@ -115,13 +178,6 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 		</div>
 	</div>

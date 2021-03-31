@@ -40,6 +40,12 @@ Partiendo del desarrollo realizado para el Ejercicio 1 de la [Práctica 5](https
 
 ![Error al cargar imagen del test 1](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST1-P6.png?token=AKMQEBMEVQDHTEC7ZCQOZT3ANYKH4)
 
+Como en la práctica anterior, he creado un tipo de dato denominado __BasicStatistics__ que contiene las propiedades de ataque, defensa, velocidad y daño máximo. Acto seguido, creé una clase abstracta __Fighter__ que será la superclase de las demás clases que explicaré a continuación. Esta permite hacer que un contendiente pueda luchar cuyo constructor tiene como atributos el nombre, peso, altura, las estadísticas básicas mencionadas anteriormente, el universo al que pertenece y por último, una frase típica del luchador. 
+
+He realizado las clases Pokemon y Marvel. Estas se extienden de la clase Fighter, por tanto, utiliza los mismos atributos del constructor de la misma mediante super.
+
+En cuanto a la clase Combat, utiliza dos parámetros de tipo genéricos que extienden de la clase abstracta __Fighter__ en el constructor para realizar el combate final. En esta clase, hay dos funciones diferenciadas que calculan el daño causado. La primera, se realiza desde el luchador uno al dos y la segunda en caso contrario. Cabe destacar que dependiendo del universo, tiene un efectividad diferente. Por último, la función start indica el resultado del combate por pantalla.
+
 ### Ejercicio 2 - Conversor de unidades
 
 Considere una herramienta que nos permita realizar las conversiones de unidades o sistemas de medición para distintas magnitudes físicas. Las más comunes pueden ser:
@@ -65,6 +71,10 @@ Diseñe una interfaz genérica __isConvertible__ que permita realizar conversion
 ![Error al cargar el ejercicio 2](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/ej2.3-p6.png?token=AKMQEBILE2QB5NW7XP3LQ63ANYKMY)
 
 ![Error al cargar el test 2](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST2-P6.png?token=AKMQEBNZPCOZBDFBY4LJ27DANYKNU)
+
+En primer lugar, la interfaz genérica __isConvertible__ recibe una cantidad genérica de origen. Esta permite realizar conversiones entre sistemas para cada magnitud considerada. 
+
+En cuanto a las clases que representan las diferentes unidades, implementan la interfaz detallada anteriormente. Cada uno de los constructores recibe la cantidad inicial y la unidad inicial. Y el método recibe como parámetro la unidad destino. Este devuelve el resultado de una regla de tres utilizando la tupla creada anterior a dicha clase. Esta tupla consta de dos arrays. El primero de tipo string que contiene las unidades y el segundo de tipo number que contiene las equivalencias. Todas las clases siguen el mismo procedimiento. 
 
 ### Ejercicio 3 - DSIflix
 
@@ -95,9 +105,13 @@ Imagine que tiene que diseñar el modelo de datos de una plataforma de vídeo en
 
 ![Error al cargar el test 3](https://raw.githubusercontent.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-lauracahe/master/ejercicios/images/TEST3.2-P6.png?token=AKMQEBLUUTMFNJ7BLEHRVU3ANYKZ4)
 
+En este ejercicio he seguido los principios SOLID detallados en el guión de la práctica. Por ello, creé dos interfaces diferentes para detallar los diferentes métodos que iba a implementar la clase __BasicStreamableCollection__. Estos son los de añadir una emisión a una colección, obtener la colección y por otro lado, buscar en la misma mediante un tipo, ya sea el nombre, el año, el director, etc, y el atributo a buscar, es decir, el dato que se quiere obtener. Entonces, esta clase implementa estos tres métodos. 
+
+En cuanto a los tipos de datos, he creado un tipo de dato denominado __Serie__, otro __Movie__ y por último, __Documentary__. Estos contienen las propiedades que definen a cada uno de ellos, por ejemplo, el nombre, el género, el año, etc. Luego, he creado tres clases muy similares que extienden de la clase abstracta __BasicStreamableCollection__ en la que el constructor recibe por parámetro una colección del tipo respectivo en cada una de ella. En la función de búsqueda, mediante un switch, según el tipo que se le pasa por parámetro, se realiza un push al resultado si el valor de la colección que esté recorriendo en el forEach coincide con el del atributo pasado por parámetro. 
+
 ## 4. Conclusiones y dificultades
 
-A modo de conclusión, me han resultado bastante interesante la realización de los ejercicios. Sobretodo, llevar a cabo la documentación de las pruebas mediante la herramienta Instanbul.
+A modo de conclusión, me ha resultado bastante interesante la realización de los ejercicios. Sobretodo, llevar a cabo la documentación de las pruebas mediante la herramienta Instanbul. Me han servido para profundizar sobre las clases e interfaces genéricas y me han quedado mucho más claro algunos conceptos. 
 
 ## 5. Referencias
 
